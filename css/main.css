@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=League+Spartan:wght@100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "League Spartan", sans-serif;
+  background-color: #070724;
+  background-image: url(../image/background-stars.png);
+}
+body .navbar {
+  padding: 12px 40px 17px 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+body .navbar .logo {
+  font-family: "Antonio", sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #fff;
+}
+body .navbar .linkTabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 33px;
+}
+body .navbar .linkTabs .linkTab {
+  padding-top: 11px;
+  position: relative;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 227%;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0.75;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+body .navbar .linkTabs .linkTab::after {
+  content: "";
+  width: 0;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+body .navbar .linkTabs .linkTab:nth-child(1)::after {
+  background-color: #419ebb;
+}
+body .navbar .linkTabs .linkTab:nth-child(2)::after {
+  background-color: #eda249;
+}
+body .navbar .linkTabs .linkTab:nth-child(3)::after {
+  background-color: #6d2ed5;
+}
+body .navbar .linkTabs .linkTab:nth-child(4)::after {
+  background-color: #d14c32;
+}
+body .navbar .linkTabs .linkTab:nth-child(5)::after {
+  background-color: #d83a34;
+}
+body .navbar .linkTabs .linkTab:nth-child(6)::after {
+  background-color: #cd5120;
+}
+body .navbar .linkTabs .linkTab:nth-child(7)::after {
+  background-color: #1ec1a2;
+}
+body .navbar .linkTabs .linkTab:nth-child(8)::after {
+  background-color: #2d68f0;
+}
+body .navbar .linkTabs .linkTab:hover {
+  opacity: 1;
+}
+body .navbar .linkTabs .linkTab:hover::after {
+  width: 100%;
+}
+body .main {
+  max-width: 1150px;
+  padding: 20px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+body .main .info {
+  margin-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 130px;
+}
+body .main .info .planetImage {
+  width: 630px;
+  position: relative;
+}
+body .main .info .planetImage img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0.1;
+  -webkit-transform: translate(-100%, -100%) scale(0.3);
+      -ms-transform: translate(-100%, -100%) scale(0.3);
+          transform: translate(-100%, -100%) scale(0.3);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  z-index: -1;
+}
+body .main .info .planetImage img.isActive {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+      -ms-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+body .main .info .planetInfo {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 350px;
+          flex: 1 0 350px;
+  width: 350px;
+  height: 500px;
+}
+body .main .info .planetInfo .aspect {
+  position: absolute;
+  opacity: 0;
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+body .main .info .planetInfo .aspect .title {
+  font-family: "Antonio", sans-serif;
+  font-weight: 500;
+  font-size: 80px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 23px;
+}
+body .main .info .planetInfo .aspect .text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 179%;
+  color: #fff;
+  margin-bottom: 24px;
+}
+body .main .info .planetInfo .aspect .wikipedia {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 179%;
+  color: #fff;
+  opacity: 0.5;
+}
+body .main .info .planetInfo .aspect .wikipedia a {
+  font-weight: 700;
+  text-decoration: underline;
+  color: #fff;
+}
+body .main .info .planetInfo .aspect.isActive {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+}
+body .main .info .planetInfo .btns {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+}
+body .main .info .planetInfo .btns button {
+  cursor: pointer;
+  padding: 12px 28px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  gap: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+body .main .info .planetInfo .btns button:first-child {
+  background-color: #6d2ed5;
+}
+body .main .info .planetInfo .btns button span:first-child {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 208%;
+  letter-spacing: 0.21em;
+  text-transform: uppercase;
+  color: #fff;
+}
+body .main .info .planetInfo .btns button span:last-child {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 208%;
+  letter-spacing: 0.21em;
+  text-transform: uppercase;
+  color: #fff;
+}
+body .main .info .planetInfo .btns button:hover {
+  background: rgba(216, 216, 216, 0.2);
+}
+body .main .moreInfo {
+  position: relative;
+}
+body .main .moreInfo .bot {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+body .main .moreInfo .bot .bottomInfo {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  padding: 20px 0 27px 23px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 4px;
+}
+body .main .moreInfo .bot .bottomInfo span:first-child {
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 227%;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0.5;
+}
+body .main .moreInfo .bot .bottomInfo span:last-child {
+  font-family: "Antonio", sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #fff;
+}
+body .main .moreInfo .bot.isActive .bottomInfo {
+  visibility: visible;
+  opacity: 1;
+}

@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=League+Spartan:wght@100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  overflow-x: hidden;
+  font-family: "League Spartan", sans-serif;
+  // font-family: "Antonio", sans-serif;
+  background-color: #070724;
+  background-image: url(../image/background-stars.png);
+  .navbar {
+    padding: 12px 40px 17px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    .logo {
+      font-family: "Antonio", sans-serif;
+      font-weight: 500;
+      font-size: 28px;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .linkTabs {
+      display: flex;
+      align-items: center;
+      gap: 33px;
+      .linkTab {
+        padding-top: 11px;
+        position: relative;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 11px;
+        line-height: 227%;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: #fff;
+        opacity: 0.75;
+        transition: 0.3s;
+        &::after {
+          content: "";
+          width: 0;
+          height: 4px;
+          position: absolute;
+          left: 0;
+          transition: 0.3s;
+        }
+        &:nth-child(1) {
+          &::after {
+            background-color: #419ebb;
+          }
+        }
+        &:nth-child(2) {
+          &::after {
+            background-color: #eda249;
+          }
+        }
+        &:nth-child(3) {
+          &::after {
+            background-color: #6d2ed5;
+          }
+        }
+        &:nth-child(4) {
+          &::after {
+            background-color: #d14c32;
+          }
+        }
+        &:nth-child(5) {
+          &::after {
+            background-color: #d83a34;
+          }
+        }
+        &:nth-child(6) {
+          &::after {
+            background-color: #cd5120;
+          }
+        }
+        &:nth-child(7) {
+          &::after {
+            background-color: #1ec1a2;
+          }
+        }
+        &:nth-child(8) {
+          &::after {
+            background-color: #2d68f0;
+          }
+        }
+        &:hover {
+          opacity: 1;
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .main {
+    max-width: 1150px;
+    padding: 20px;
+    margin: 0 auto;
+    padding-top: 50px;
+    .info {
+      margin-bottom: 50px;
+      display: flex;
+      gap: 130px;
+      .planetImage {
+        width: 630px;
+        position: relative;
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          opacity: 0.1;
+          transform: translate(-100%, -100%) scale(0.3);
+          transition: 0.5s;
+          z-index: -1;
+          &.isActive {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+          }
+        }
+      }
+      .planetInfo {
+        position: relative;
+        flex: 1 0 350px;
+        width: 350px;
+        height: 500px;
+        .aspect {
+          position: absolute;
+          opacity: 0;
+          transform: translateX(100%);
+          transition: 0.5s;
+          .title {
+            font-family: "Antonio", sans-serif;
+            font-weight: 500;
+            font-size: 80px;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 23px;
+          }
+          .text {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 179%;
+            color: #fff;
+            margin-bottom: 24px;
+          }
+          .wikipedia {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 179%;
+            color: #fff;
+            opacity: 0.5;
+            a {
+              font-weight: 700;
+              text-decoration: underline;
+              color: #fff;
+            }
+          }
+          &.isActive {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        .btns {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          button {
+            cursor: pointer;
+            padding: 12px 28px;
+            display: flex;
+            justify-content: start;
+            gap: 28px;
+            border: 1px solid #ffffff33;
+            background-color: transparent;
+            transition: 0.3s;
+            &:first-child {
+              background-color: #6d2ed5;
+            }
+            span:first-child {
+              font-family: var(--font-family);
+              font-weight: 700;
+              font-size: 12px;
+              line-height: 208%;
+              letter-spacing: 0.21em;
+              text-transform: uppercase;
+              color: #fff;
+            }
+            span:last-child {
+              font-family: var(--font-family);
+              font-weight: 700;
+              font-size: 12px;
+              line-height: 208%;
+              letter-spacing: 0.21em;
+              text-transform: uppercase;
+              color: #fff;
+            }
+            &:hover {
+              background: #d8d8d833;
+            }
+          }
+        }
+      }
+    }
+    .moreInfo {
+      position: relative;
+      .bot {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        .bottomInfo {
+          transition: 0.5s;
+          opacity: 0;
+          visibility: hidden;
+          padding: 20px 0 27px 23px;
+          border: 1px solid #ffffff33;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          span:first-child {
+            font-weight: 700;
+            font-size: 11px;
+            line-height: 227%;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            color: #fff;
+            opacity: 0.5;
+          }
+          span:last-child {
+            font-family: "Antonio", sans-serif;
+            font-weight: 500;
+            font-size: 40px;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            color: #fff;
+          }
+        }
+        &.isActive {
+          .bottomInfo {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
